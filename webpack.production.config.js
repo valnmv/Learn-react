@@ -55,5 +55,10 @@ module.exports = {
   },
   postcss: [
     require('autoprefixer')
-  ]
+  ],
+
+  resolve: {
+    root: [path.join(__dirname, 'app')],
+    extensions: ['', '.js', '.jsx', '.css']
+  }
 };
