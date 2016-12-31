@@ -15,9 +15,9 @@ const routes = createRoutes();
 
 ReactDOM.render(
   <MuiThemeProvider>
-  <Provider store={store}>
-    <Router history={browserHistory}>
-      {routes}
-    </Router>
-  </Provider>
+    <Provider store={store}>
+      <Router history={browserHistory}>
+        {routes}
+      </Router>
+    </Provider>
 </MuiThemeProvider>, document.getElementById('root'));
