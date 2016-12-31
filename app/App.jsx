@@ -10,6 +10,7 @@ class App extends React.Component {
     this.touchTap = this.touchTap.bind(this);
   }
 
+  // go to home page on click header
   touchTap() {
     browserHistory.push('/');
   }
@@ -17,7 +18,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <AppBar title="React" onTitleTouchTap={ this.touchTap }>
+        <AppBar title="React" onTitleTouchTap={this.touchTap}>
           <FlatButton containerElement={<Link to="/about" />} label="About" />
           <FlatButton containerElement={<Link to="/" />} label="Home" />
         </AppBar>
