@@ -5,7 +5,7 @@
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/valnmv/Learn-react.git"
+    "url": "https://github.com/valnmv/learn-react.git"
   },
   "keywords": [
     "express",
@@ -15,9 +15,9 @@
   "author": "Valentin Naumov",
   "license": "ICS",
   "bugs": {
-    "url": "https://github.com/valnmv/Learn-react/issues"
+    "url": "https://github.com/valnmv/learn-react/issues"
   },
-  "homepage": "https://github.com/valnmv/Learn-react",
+  "homepage": "https://github.com/valnmv/learn-react",
   "scripts": {
     "test": "",
     "start": "node server",

@@ -1,10 +1,10 @@
-# Learn-react
+# learn-react
 Learning project based on https://github.com/christianalfoni/webpack-express-boilerplate
 
 ## Major updates
 Added material-ui, react-redux, react-router, react-router-redux, redux-act, react-devtools
 
-## Learing sources
+## Learning sources
 React basics, router, redux:
 https://github.com/facebookincubator/create-react-app
 https://css-tricks.com/learning-react-router/
