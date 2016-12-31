@@ -1,23 +1,23 @@
 {
   "name": "webpack-express-boilerplate",
   "version": "0.1.0",
-  "description": "A boilerplate for running a Webpack workflow in Node express",
+  "description": "React project for learning purposes",
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/christianalfoni/webpack-express-boilerplate.git"
+    "url": "https://github.com/valnmv/Learn-react.git"
   },
   "keywords": [
     "express",
     "webpack",
     "node"
   ],
-  "author": "Christian Alfoni",
-  "license": "MIT",
+  "author": "Valentin Naumov",
+  "license": "ICS",
   "bugs": {
-    "url": "https://github.com/christianalfoni/webpack-express-boilerplate/issues"
+    "url": "https://github.com/valnmv/Learn-react/issues"
   },
-  "homepage": "https://github.com/christianalfoni/webpack-express-boilerplate",
+  "homepage": "https://github.com/valnmv/Learn-react",
   "scripts": {
     "test": "",
     "start": "node server",
