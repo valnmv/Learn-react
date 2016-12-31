@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import { Card, CardTitle, CardText } from 'material-ui/Card';
+import { Card, CardTitle, CardText, CardActions } from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -11,14 +12,19 @@ class Home extends Component {
   }
 
   render() {
-    const {todos} = this.props;
+    const {todos, actions} = this.props;
 
     return (
       <Card>
         <CardTitle title="Home" subtitle="This is the home page" />
-        <CardText>
-          {todos.map(todo => todo.text)}
-        </CardText>
+        {todos.map(todo =>
+          <CardText key={todo.id}> {todo.text}
+            <CardActions>
+              <FlatButton label="Delete" onClick={() => actions.deleteTodo(todo.id)}/>
+            </CardActions>
+          </CardText>
+        )}
+        <FlatButton label="Add" onClick={() => actions.addTodo('new task')}/>
       </Card>
     );
   }

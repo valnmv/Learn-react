@@ -5,6 +5,11 @@ const initialState = [
     text: 'Use Redux',
     completed: false,
     id: 0
+  },
+  {
+    text: 'Use MongoDb',
+    completed: false,
+    id: 2
   }
 ];
 
