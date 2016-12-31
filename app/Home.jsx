@@ -1,9 +1,9 @@
-import React, { Component, PropTypes } from 'react';
-import { Card, CardTitle, CardText, CardActions } from 'material-ui/Card';
-import { TextField, FlatButton } from 'material-ui';
+import React, {Component, PropTypes} from 'react';
+import {Card, CardTitle, CardText, CardActions} from 'material-ui/Card';
+import {TextField, FlatButton} from 'material-ui';
 
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 import * as TodoActions from './reducers/todos';
 
 class Home extends Component {
@@ -11,13 +11,13 @@ class Home extends Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.handleAddClick = this.handleAddClick.bind(this);
-    this.state = {text: ''};
+    this.state = {
+      text: ''
+    };
   }
 
   handleChange = (event) => {
-    this.setState({
-      text: event.target.value
-    });
+    this.setState({text: event.target.value});
   }
 
   handleAddClick = () => {
@@ -29,16 +29,13 @@ class Home extends Component {
 
     return (
       <Card>
-        <CardTitle title="Home" subtitle="This is the home page" />
-        { todos.map(todo =>
-          <CardText key={todo.id}>{todo.text}
-            <CardActions>
-              <FlatButton label="Delete" onClick={ () => actions.deleteTodo(todo.id) }/>
-            </CardActions>
-          </CardText>
-        )}
+        <CardTitle title="Home" subtitle="This is the home page"/> {todos.map(todo => <CardText key={todo.id}>{todo.text}
+          <CardActions>
+            <FlatButton label="Delete" onClick={() => actions.deleteTodo(todo.id)}/>
+          </CardActions>
+        </CardText>)}
 
-        <TextField hintText="New todo text" onChange={this.handleChange} />
+        <TextField hintText="New todo text" onChange={this.handleChange}/>
         <FlatButton label="Add" onClick={this.handleAddClick}/>
       </Card>
     );
@@ -51,9 +48,7 @@ Home.propTypes = {
 };
 
 function mapStateToProps(state) {
-  return {
-    todos: state.todos
-  };
+  return {todos: state.todos};
 }
 
 function mapDispatchToProps(dispatch) {
@@ -62,7 +57,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

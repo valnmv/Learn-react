@@ -1,12 +1,11 @@
-import { createAction, createReducer } from 'redux-act';
+import {createAction, createReducer} from 'redux-act';
 
 const initialState = [
   {
     text: 'Use Redux',
     completed: false,
     id: 0
-  },
-  {
+  }, {
     text: 'Use MongoDb',
     completed: false,
     id: 2
@@ -26,8 +25,6 @@ export default createReducer({
     ...state
   ],
 
-  [deleteTodo]: (state, id) => state.filter(todo =>
-    todo.id !== id
-  )
+  [deleteTodo]: (state, id) => state.filter(todo => todo.id !== id)
 
 }, initialState);

@@ -1,7 +1,7 @@
-import React, { PropTypes }  from 'react';
-import { browserHistory } from 'react-router';
-import { Link } from 'react-router';
-import { AppBar, FlatButton } from 'material-ui';
+import React, {PropTypes} from 'react';
+import {browserHistory} from 'react-router';
+import {Link} from 'react-router';
+import {AppBar, FlatButton} from 'material-ui';
 // import styles from './App.css';
 
 class App extends React.Component {
@@ -19,8 +19,8 @@ class App extends React.Component {
     return (
       <div>
         <AppBar title="React" onTitleTouchTap={this.touchTap}>
-          <FlatButton containerElement={<Link to="/about" />} label="About" />
-          <FlatButton containerElement={<Link to="/" />} label="Home" />
+          <FlatButton containerElement={< Link to = "/about" />} label="About"/>
+          <FlatButton containerElement={< Link to = "/" />} label="Home"/>
         </AppBar>
 
         {this.props.children}

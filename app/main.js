@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, browserHistory } from 'react-router';
+import {Router, browserHistory} from 'react-router';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import { Provider } from 'react-redux';
+import {Provider} from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import createRoutes from './routes';
 import configureStore from './store';
@@ -15,10 +15,9 @@ const routes = createRoutes();
 
 ReactDOM.render(
   <MuiThemeProvider>
-    <Provider store={store}>
-      <Router history={browserHistory}>
-        {routes}
-      </Router>
-    </Provider>
-  </MuiThemeProvider>,
-document.getElementById('root'));
+  <Provider store={store}>
+    <Router history={browserHistory}>
+      {routes}
+    </Router>
+  </Provider>
+</MuiThemeProvider>, document.getElementById('root'));
