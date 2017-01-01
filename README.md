@@ -24,6 +24,7 @@ https://github.com/react-bootstrap/react-router-bootstrap
 Boilerplates:
 https://github.com/mxstbr/react-boilerplate
 https://github.com/reactGo/reactGo
+https://github.com/zeit/next.js
 http://mern.io/
 
 props vs state:
