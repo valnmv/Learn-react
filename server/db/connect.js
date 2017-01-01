@@ -1,3 +1,4 @@
+/* eslint no-console: 0 */
 import mongoose from 'mongoose';
 import {db} from './constants';
 import loadModels from './models';
@@ -16,7 +17,7 @@ export default () => {
   connect();
 
   mongoose.connection.on('error', console.log);
-  //mongoose.connection.on('disconnected', connect);
+  // mongoose.connection.on('disconnected', connect);
 
   loadModels();
 };

@@ -22,8 +22,7 @@
     "test": "",
     "start": "node ./node_modules/babel-cli/bin/babel-node.js ./server/index.js",
     "build": "rimraf dist && cross-env NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors",
-    "eslint": "eslint .",
-    "jscs": "jscs ."
+    "eslint": "eslint ."
   },
   "dependencies": {
     "axios": "^0.15.3",
@@ -63,7 +62,6 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "flow": "^0.2.3",
     "html-webpack-plugin": "^2.24.1",
-    "jscs": "^3.0.7",
     "jsdom": "^9.9.1",
     "json-loader": "^0.5.4",
     "mocha": "^3.2.0",
