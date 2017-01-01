@@ -1,7 +1,3 @@
-/**
- * Schema Definitions
- *
- */
 import mongoose from 'mongoose';
 
 const TodoSchema = new mongoose.Schema({
@@ -10,4 +6,4 @@ const TodoSchema = new mongoose.Schema({
   completed: Boolean
 });
 
-export default mongoose.model('Todo', TodoSchema);
+module.exports = mongoose.model('Todo', TodoSchema);

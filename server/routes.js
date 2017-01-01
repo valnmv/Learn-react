@@ -1,10 +1,7 @@
-/**
- * Routes for express app
- */
-import { controllers } from './db';
-
-const todoController = controllers && controllers.todo;
+import Todo from './models';
 
 export default (app) => {
-  app.get('/todo', todoController.all);
+  app.get('/todo', () => {
+    Todo.find({});
+  });
 };
