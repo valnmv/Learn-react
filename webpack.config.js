@@ -10,9 +10,9 @@ module.exports = {
     filename: 'app.js',
   },
 
-  module: {
+  devtool: 'source-map',
 
-    // apply loaders to files that meet given conditions
+  module: {
     loaders: [{
       test: /\.jsx?$/,
       include: path.join(__dirname, '/client/src'),

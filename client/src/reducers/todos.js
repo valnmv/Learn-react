@@ -1,4 +1,5 @@
-import {createAction, createReducer} from 'redux-act';
+import { createAction, createReducer } from 'redux-act';
+import { deleteTodoAction } from '../actions';
 
 const initialState = [
   {
@@ -25,6 +26,9 @@ export default createReducer({
     ...state
   ],
 
-  [deleteTodo]: (state, id) => state.filter(todo => todo.id !== id)
+  [deleteTodo]: (state, id) => {
+    deleteTodoAction(state, id);
+    return state.filter(todo => todo.id !== id);
+  }
 
 }, initialState);
