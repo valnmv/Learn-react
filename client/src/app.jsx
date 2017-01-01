@@ -20,4 +20,4 @@ ReactDOM.render(
         {routes}
       </Router>
     </Provider>
-</MuiThemeProvider>, document.getElementById('root'));
+</MuiThemeProvider>, document.getElementById('react-app'));

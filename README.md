@@ -1,8 +1,8 @@
 # learn-react
-Learning project based on https://github.com/christianalfoni/webpack-express-boilerplate
+Learning project based on https://github.com/vladimirponomarev/authentication-in-react-apps
 
 ## Major updates
-Added material-ui, react-redux, react-router, react-router-redux, redux-act, react-devtools
+Added react-redux, react-router, react-router-redux, redux-act, react-devtools
 
 ## Learning sources
 React basics, router, redux:

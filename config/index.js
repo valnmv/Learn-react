@@ -4,4 +4,4 @@ const config = {
   isDeveloping: process.env.NODE_ENV !== 'production'
 };
 
-export default config;
+module.exports = config;

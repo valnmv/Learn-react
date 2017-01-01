@@ -5,7 +5,7 @@ import {AppBar, FlatButton} from 'material-ui';
 // import styles from './App.css';
 import DevTools from './DevTools';
 
-class App extends React.Component {
+class MainForm extends React.Component {
   constructor(props) {
     super(props);
     this.touchTap = this.touchTap.bind(this);
@@ -31,8 +31,8 @@ class App extends React.Component {
   }
 }
 
-App.propTypes = {
+MainForm.propTypes = {
   children: PropTypes.object.isRequired
 };
 
-export default App;
+export default MainForm;

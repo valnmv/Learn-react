@@ -1,52 +1,33 @@
-'use strict';
-
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
-  devtool: 'eval-source-map',
-  entry: [
-    'webpack-hot-middleware/client?reload=true',
-    path.join(__dirname, 'app/main.js')
-  ],
+  // the entry file for the bundle
+  entry: path.join(__dirname, '/client/src/app.jsx'),
+
+  // the bundle file we will get in the result
   output: {
-    path: path.join(__dirname, '/dist/'),
-    filename: '[name].js',
-    publicPath: '/'
+    path: path.join(__dirname, '/client/dist/js'),
+    filename: 'app.js',
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: 'app/index.tpl.html',
-      inject: 'body',
-      filename: 'index.html'
-    }),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development')
-    })
-  ],
+
   module: {
+
+    // apply loaders to files that meet given conditions
     loaders: [{
       test: /\.jsx?$/,
-      exclude: /node_modules/,
+      include: path.join(__dirname, '/client/src'),
       loader: 'babel',
       query: {
-        "presets": ["react", "es2015", "stage-0", "react-hmre"]
+        presets: ["react", "es2015", "stage-0"]
       }
-    }, {
-      test: /\.json?$/,
-      loader: 'json'
-    }, {
-      test: /\.css$/,
-      loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]'
-    }]
+    }],
   },
 
   resolve: {
-    root: [path.join(__dirname, 'app')],
+    root: [path.join(__dirname, 'client/src')],
     extensions: ['', '.js', '.jsx', '.css']
-  }
+  },
+
+  // start Webpack in a watch mode, so Webpack will rebuild the bundle on changes
+  watch: true
 };
