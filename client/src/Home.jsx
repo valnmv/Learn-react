@@ -1,9 +1,9 @@
-import React, {Component, PropTypes} from 'react';
-import {Card, CardTitle, CardText, CardActions} from 'material-ui/Card';
-import {TextField, FlatButton} from 'material-ui';
+import React, { Component, PropTypes } from 'react';
+import { Card, CardTitle, CardText, CardActions } from 'material-ui/Card';
+import { TextField, FlatButton } from 'material-ui';
 
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import * as TodoActions from './reducers/todos';
 
 class Home extends Component {
@@ -22,6 +22,8 @@ class Home extends Component {
 
   handleAddClick = () => {
     this.props.actions.addTodo(this.state.text);
+    // const {...actions} = this.props;
+    // actions.addTodo(this.state.text);
   }
 
   render() {
@@ -29,10 +31,11 @@ class Home extends Component {
 
     return (
       <Card>
-        <CardTitle title="Home" subtitle="This is the home page"/> {todos.map(todo => <CardText key={todo.id}>{todo.text}
-          <CardActions>
-            <FlatButton label="Delete" onClick={() => actions.deleteTodo(todo.id)}/>
-          </CardActions>
+        <CardTitle title="Home" subtitle="This is the home page"/>
+           {todos.map(todo => <CardText key={todo.id}>{todo.text}
+        <CardActions>
+          <FlatButton label="Delete" onClick={() => actions.deleteTodo(todo.id)}/>
+        </CardActions>
         </CardText>)}
 
         <TextField hintText="New todo text" onChange={this.handleChange}/>

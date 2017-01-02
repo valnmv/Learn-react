@@ -7,7 +7,12 @@
     "type": "git",
     "url": "https://github.com/valnmv/learn-react.git"
   },
-  "keywords": [ "mongodb", "react", "express", "node" ],
+  "keywords": [
+    "mongodb",
+    "react",
+    "express",
+    "node"
+  ],
   "author": "Valentin Naumov",
   "license": "ISC",
   "bugs": {
@@ -21,8 +26,11 @@
   "dependencies": {
     "axios": "^0.15.3",
     "babel-polyfill": "^6.20.0",
+    "body-parser": "^1.15.2",
+    "cuid": "^1.3.8",
     "express": "^4.14.0",
     "immutable": "^3.8.1",
+    "limax": "^1.4.1",
     "lodash": "^4.17.3",
     "material-ui": "^0.16.6",
     "mongoose": "^4.7.5",
@@ -36,6 +44,7 @@
     "redux-act": "^1.1.0",
     "redux-immutable": "^3.0.9",
     "redux-saga": "^0.14.0",
+    "sanitize-html": "^1.13.0",
     "validator": "^6.2.0"
   },
   "devDependencies": {
@@ -46,7 +55,6 @@
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
-    "body-parser": "^1.15.2",
     "eslint": "^3.12.2",
     "eslint-plugin-react": "^6.8.0",
     "flow": "^0.2.3",
