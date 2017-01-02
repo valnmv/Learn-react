@@ -7,17 +7,17 @@ router.get('/todo', (req, res) => {
   Todo.find({}, (err, data) => { res.status(200).json(data); });
 });
 
+const cuid = require('cuid');
+const sanitizeHtml = require('sanitize-html');
+const slug = require('limax');
 
-// import cuid from 'cuid';
-// import slug from 'limax';
-// import sanitizeHtml from 'sanitize-html';
-
-router.post('/todo', (req, res, next) => {
+router.post('/todo', (req, res) => {
   const newTodo = new Todo(req.body);
-  // newTodo.cuid = cuid();
 
   // Sanitize inputs
-  // newTodo.text = sanitizeHtml(newPost.title);
+  newTodo.text = sanitizeHtml(newTodo.text);
+  newTodo.slug = slug(newTodo.text);
+  newTodo.cuid = cuid();
 
   newTodo.save((err, saved) => {
     res.status(200).json({ saved });

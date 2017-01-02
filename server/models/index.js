@@ -6,7 +6,7 @@ module.exports.connect = (uri) => {
   mongoose.Promise = global.Promise;
 
   mongoose.connection.on('error', (err) => {
-    console.error(err);
+    console.error(err);  /* eslint no-console: 0 */
     process.exit(1);
   });
 

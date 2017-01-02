@@ -22,8 +22,6 @@ class Home extends Component {
 
   handleAddClick = () => {
     this.props.actions.addTodo(this.state.text);
-    // const {...actions} = this.props;
-    // actions.addTodo(this.state.text);
   }
 
   render() {
