@@ -1,17 +1,13 @@
 {
-  "name": "webpack-express-boilerplate",
-  "version": "0.1.0",
+  "name": "learn-react",
+  "version": "0.2.0",
   "description": "React project for learning purposes",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/valnmv/learn-react.git"
   },
-  "keywords": [
-    "express",
-    "webpack",
-    "node"
-  ],
+  "keywords": [ "mongodb", "react", "express", "node" ],
   "author": "Valentin Naumov",
   "license": "ISC",
   "bugs": {
@@ -27,7 +23,6 @@
     "babel-polyfill": "^6.20.0",
     "express": "^4.14.0",
     "immutable": "^3.8.1",
-    "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.3",
     "material-ui": "^0.16.6",
     "mongoose": "^4.7.5",

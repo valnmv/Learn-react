@@ -2,7 +2,7 @@
 Learning project based on https://github.com/vladimirponomarev/authentication-in-react-apps
 
 ## Major updates
-Added react-redux, react-router, react-router-redux, redux-act, react-devtools
+Added redux-act, react-devtools, eslint and flow
 
 ## Learning sources
 React basics, router, redux:
