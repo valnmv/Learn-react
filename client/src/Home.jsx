@@ -6,6 +6,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as TodoActions from './reducers/todos';
 
+import { callApi } from './callapi';
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -24,6 +26,13 @@ class Home extends Component {
     this.props.actions.addTodo(this.state.text);
   }
 
+  loadTodos = () => {
+    callApi('get', 0, {}, '/api/todo')
+      .then(res => {
+        this.props.actions.getTodosDone(res.data);
+      });
+  }
+
   render() {
     const {todos, actions} = this.props;
 
@@ -38,6 +47,8 @@ class Home extends Component {
 
         <TextField hintText="New todo text" onChange={this.handleChange}/>
         <FlatButton label="Add" onClick={this.handleAddClick}/>
+
+        <FlatButton label="Load" onClick={() => this.loadTodos()}/>
       </Card>
     );
   }
