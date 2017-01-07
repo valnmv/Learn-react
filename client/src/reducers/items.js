@@ -10,12 +10,14 @@ export const getItems = createAction('get items');
 
 export default createReducer({
   [addItem]: (state, text) => {
+    const cuid = require('cuid');
     const newItem = {
-      id: state.reduce((maxId, item) => Math.max(item.id, maxId), -1) + 1,
+      cuid: cuid(),
       text: text
     };
 
     callApi('post', 0, newItem, '/api/item');
+
     const newState = [newItem, ...state];
     return newState;
   },

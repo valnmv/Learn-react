@@ -7,20 +7,16 @@ router.get('/item', (req, res) => {
   Item.find({}, (err, data) => { res.status(200).json(data); });
 });
 
-const cuid = require('cuid');
 const sanitizeHtml = require('sanitize-html');
 const slug = require('limax');
 
 router.post('/item', (req, res) => {
   const newItem = new Item(req.body);
-
-  // Sanitize inputs
   newItem.text = sanitizeHtml(newItem.text);
   newItem.slug = slug(newItem.text);
-  newItem.cuid = cuid();
 
   newItem.save((err, saved) => {
-    res.status(200).json({ saved });
+    res.status(200).json(saved);
   });
 });
 

@@ -21,10 +21,10 @@ class ItemTable extends Component {
 
         <TableBody>
           {items.map(item =>
-            <TableRow key={item.id}>
-              <TableRowColumn>{item.id}</TableRowColumn>
+            <TableRow key={item.cuid}>
+              <TableRowColumn>{item.cuid}</TableRowColumn>
               <TableRowColumn>{item.text}</TableRowColumn>
-              <TableRowColumn />
+              <TableRowColumn>.</TableRowColumn>
             </TableRow>
           )}
         </TableBody>
