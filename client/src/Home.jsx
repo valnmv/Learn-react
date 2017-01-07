@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Card, CardTitle, CardText, CardActions } from 'material-ui/Card';
 import { TextField, FlatButton } from 'material-ui';
+import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -19,7 +20,7 @@ class Home extends Component {
   }
 
   handleChange = (event) => {
-    this.setState({text: event.target.value});
+    this.setState({ text: event.target.value });
   }
 
   handleAddClick = () => {
@@ -37,19 +38,32 @@ class Home extends Component {
     const {todos, actions} = this.props;
 
     return (
-      <Card>
-        <CardTitle title="Home" subtitle="This is the home page"/>
-           {todos.map(todo => <CardText key={todo.id}>{todo.text}
-        <CardActions>
-          <FlatButton label="Delete" onClick={() => actions.deleteTodo(todo.id)}/>
-        </CardActions>
-        </CardText>)}
+      <div>
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHeaderColumn>ID</TableHeaderColumn>
+              <TableHeaderColumn>Name</TableHeaderColumn>
+              <TableHeaderColumn>Status</TableHeaderColumn>
+            </TableRow>
+          </TableHeader>
 
-        <TextField hintText="New todo text" onChange={this.handleChange}/>
-        <FlatButton label="Add" onClick={this.handleAddClick}/>
+          <TableBody>
+            {todos.map(todo =>
+              <TableRow>
+                <TableRowColumn>{todo.id}</TableRowColumn>
+                <TableRowColumn>{todo.text}</TableRowColumn>
+                <TableRowColumn></TableRowColumn>
+              </TableRow>
+            )}
+          </TableBody>
 
-        <FlatButton label="Load" onClick={() => this.loadTodos()}/>
-      </Card>
+        </Table>
+
+        <TextField hintText="New todo text" onChange={this.handleChange} />
+        <FlatButton label="Add" onClick={this.handleAddClick} />
+        <FlatButton label="Load" onClick={() => this.loadTodos()} />
+      </div>
     );
   }
 }
@@ -60,7 +74,7 @@ Home.propTypes = {
 };
 
 function mapStateToProps(state) {
-  return {todos: state.todos};
+  return { todos: state.todos };
 }
 
 function mapDispatchToProps(dispatch) {
