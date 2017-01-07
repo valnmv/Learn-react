@@ -53,7 +53,7 @@ class Home extends Component {
               <TableRow>
                 <TableRowColumn>{todo.id}</TableRowColumn>
                 <TableRowColumn>{todo.text}</TableRowColumn>
-                <TableRowColumn></TableRowColumn>
+                <TableRowColumn />
               </TableRow>
             )}
           </TableBody>
