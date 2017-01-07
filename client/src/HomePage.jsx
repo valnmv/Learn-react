@@ -4,11 +4,10 @@ import ItemTable from './ItemTable';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as TodoActions from './reducers/todos1';
-
+import * as ItemActions from './reducers/items';
 import { callApi } from './callapi';
 
-class Home extends Component {
+class HomePage extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
@@ -23,42 +22,40 @@ class Home extends Component {
   }
 
   handleAddClick = () => {
-    this.props.actions.addTodo(this.state.text);
+    this.props.actions.addItem(this.state.text);
   }
 
-  loadTodos = () => {
-    callApi('get', 0, {}, '/api/todo')
-      .then(res => {
-        this.props.actions.getTodos(res.data);
-      });
+  loadItems = () => {
+    callApi('get', 0, {}, '/api/item')
+      .then(res => { this.props.actions.getItems(res.data); });
   }
 
   render() {
     return (
       <div>
         <ItemTable items={this.props.items} />
- 
-        <TextField hintText="New todo text" onChange={this.handleChange} />
+
+        <TextField hintText="New item" onChange={this.handleChange} />
         <FlatButton label="Add" onClick={this.handleAddClick} />
-        <FlatButton label="Load" onClick={() => this.loadTodos()} />
+        <FlatButton label="Load" onClick={() => this.loadItems()} />
       </div>
     );
   }
 }
 
-Home.propTypes = {
+HomePage.propTypes = {
   items: PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {
-  return { items: state.todos1 };
+  return { items: state.items };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(TodoActions, dispatch)
+    actions: bindActionCreators(ItemActions, dispatch)
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
