@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import { Card, CardTitle, CardText, CardActions } from 'material-ui/Card';
 import { TextField, FlatButton } from 'material-ui';
-import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
+import ItemTable from './ItemTable';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -30,36 +29,15 @@ class Home extends Component {
   loadTodos = () => {
     callApi('get', 0, {}, '/api/todo')
       .then(res => {
-        this.props.actions.getTodosDone(res.data);
+        this.props.actions.getTodos(res.data);
       });
   }
 
   render() {
-    const {todos, actions} = this.props;
-
     return (
       <div>
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHeaderColumn>ID</TableHeaderColumn>
-              <TableHeaderColumn>Name</TableHeaderColumn>
-              <TableHeaderColumn>Status</TableHeaderColumn>
-            </TableRow>
-          </TableHeader>
-
-          <TableBody>
-            {todos.map(todo =>
-              <TableRow>
-                <TableRowColumn>{todo.id}</TableRowColumn>
-                <TableRowColumn>{todo.text}</TableRowColumn>
-                <TableRowColumn />
-              </TableRow>
-            )}
-          </TableBody>
-
-        </Table>
-
+        <ItemTable items={this.props.todos} />
+ 
         <TextField hintText="New todo text" onChange={this.handleChange} />
         <FlatButton label="Add" onClick={this.handleAddClick} />
         <FlatButton label="Load" onClick={() => this.loadTodos()} />
