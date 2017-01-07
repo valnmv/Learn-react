@@ -2,6 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const config = require('./config');
+const path = require('path');
 
 // connect to the database and load models
 require('./server/models').connect(config.dbUri);
@@ -17,6 +18,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // routes
 const apiRoutes = require('./server/routes/api');
 app.use('/api', apiRoutes);
+
+app.get('*', function f(req, res) {
+  res.sendFile(path.resolve(__dirname, 'server/static', 'index.html'));
+});
 
 // start the server
 app.listen(3000, () => {
