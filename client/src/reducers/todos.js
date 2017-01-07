@@ -22,7 +22,7 @@ export default createReducer({
   },
 
   [deleteTodo]: (state, id) => {
-    state.filter(todo => todo.id !== id);
+    return state.filter(todo => todo.id !== id);
   },
 
   [getTodos]: (state, payload) => {
