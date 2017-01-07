@@ -5,8 +5,8 @@ const initialState = [];
 
 export const addTodo = createAction('add todo');
 export const deleteTodo = createAction('delete todo');
+export const getTodosRequest = createAction('get todos request');
 export const getTodos = createAction('get todos');
-export const getTodosDone = createAction('get todos done');
 
 export default createReducer({
   [addTodo]: (state, text) => {
@@ -26,13 +26,13 @@ export default createReducer({
     return state.filter(todo => todo.id !== id);
   },
 
-  [getTodos]: (state, payload) => {
+  [getTodosRequest]: (state, payload) => {
     payload;
     // here possibly show clock...
     return state;
   },
 
-  [getTodosDone]: (state, payload) => {
+  [getTodos]: (state, payload) => {
     return payload;
   }
 }, initialState);
