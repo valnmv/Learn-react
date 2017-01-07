@@ -22,6 +22,7 @@ export default createReducer({
   },
 
   [deleteTodo]: (state, id) => {
+    callApi('delete', id, {}, '/api/todo');
     return state.filter(todo => todo.id !== id);
   },
 

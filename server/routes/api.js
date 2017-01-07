@@ -24,4 +24,14 @@ router.post('/todo', (req, res) => {
   });
 });
 
+router.delete('/todo/:id', (req, res) => {
+  Todo.findOneAndRemove({ id: req.params.id }, (err) => {
+    if (err) {
+      return res.status(500).send('Failed to delete');
+    }
+
+    return res.status(200);
+  });
+});
+
 module.exports = router;
