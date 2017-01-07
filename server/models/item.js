@@ -2,7 +2,10 @@ const mongoose = require('mongoose');
 
 const ItemSchema = new mongoose.Schema({
   id: String,
-  text: String,
+  no: String,
+  name: String,
+  description: String,
+  barcode: String,
   cuid: String,
   slug: String
 });
