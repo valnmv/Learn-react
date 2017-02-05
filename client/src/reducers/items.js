@@ -9,11 +9,11 @@ export const getItemsRequest = createAction('get items request');
 export const getItems = createAction('get items');
 
 export default createReducer({
-  [addItem]: (state, text) => {
+  [addItem]: (state, name) => {
     const cuid = require('cuid');
     const newItem = {
       cuid: cuid(),
-      text: text
+      name: name
     };
 
     callApi('post', 0, newItem, '/api/item');
