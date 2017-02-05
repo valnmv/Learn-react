@@ -5,7 +5,6 @@ const initialState = [];
 
 export const addItem = createAction('add item');
 export const deleteItem = createAction('delete item');
-export const getItemsRequest = createAction('get items request');
 export const getItems = createAction('get items');
 
 export default createReducer({
@@ -27,13 +26,14 @@ export default createReducer({
     return state.filter(item => item.id !== id);
   },
 
-  [getItemsRequest]: (state, payload) => {
-    payload;
-    // here possibly show clock...
-    return state;
-  },
-
   [getItems]: (state, payload) => {
     return payload;
   }
 }, initialState);
+
+export function getItemsRequest() {
+  return dispatch => {
+    callApi('get', 0, {}, '/api/item')
+      .then(res => { dispatch(getItems(res.data)); });
+  };
+}
