@@ -18,6 +18,7 @@ Various examples, https://github.com/ReactTraining/react-router
 Router, redux actions, bootstrap:
 * https://github.com/reactjs/react-router-tutorial
 * https://github.com/pauldijou/redux-act
+* https://github.com/FredericHeem/redux-act-async
 * https://github.com/reactjs/react-router-redux
 * https://github.com/react-bootstrap/react-router-bootstrap
 
@@ -26,6 +27,7 @@ Boilerplates:
 * https://github.com/reactGo/reactGo
 * https://github.com/zeit/next.js
 * http://mern.io/
+* https://github.com/FredericHeem/starhackit
 
 React props vs state:
 - props are passed from parent to child components
