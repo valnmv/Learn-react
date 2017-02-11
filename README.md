@@ -1,6 +1,8 @@
 # learn-react
 Learning project based on https://github.com/vladimirponomarev/authentication-in-react-apps
 
+Install Python 2.7, e6-promise and run MongoDB server.
+
 ## Major updates
 Added redux-act, react-devtools, eslint and flow
 
