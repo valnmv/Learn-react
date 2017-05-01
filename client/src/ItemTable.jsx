@@ -8,11 +8,25 @@ class ItemTable extends Component {
     super(props);
   }
 
+  state = {
+    selected: [],
+  };
+
+  isSelected = (index) => {
+    return this.state.selected.indexOf(index) !== -1;
+  };
+
+  handleRowSelection = (selectedRows) => {
+    this.setState({
+      selected: selectedRows,
+    });
+  };
+
   render() {
     const { items } = this.props;
 
     return (
-      <Table>
+      <Table multiSelectable onRowSelection={this.handleRowSelection}>
         <TableHeader>
           <TableRow>
             <TableHeaderColumn>No</TableHeaderColumn>
@@ -21,7 +35,7 @@ class ItemTable extends Component {
           </TableRow>
         </TableHeader>
 
-        <TableBody showRowHover>
+        <TableBody onRowSelection={this.handleRowSelection}>
           {items.map(item =>
             <TableRow key={item.cuid}>
               <TableRowColumn><Link to={`item/${item._id}`}>{item._id}</Link></TableRowColumn>

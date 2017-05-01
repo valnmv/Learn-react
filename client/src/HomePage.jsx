@@ -10,9 +10,6 @@ import * as ItemActions from './reducers/items';
 class HomePage extends Component {
   constructor(props) {
     super(props);
-    this.handleChange = this.handleChange.bind(this);
-    this.handleAddClick = this.handleAddClick.bind(this);
-    this.handleLoadClick = this.handleLoadClick.bind(this);
     this.state = {
       text: ''
     };
@@ -37,6 +34,7 @@ class HomePage extends Component {
         <TextField hintText="New item" onChange={this.handleChange} />
         <FlatButton label="Add" onClick={this.handleAddClick} />
         <FlatButton label="Load" onClick={this.handleLoadClick} />
+        <FlatButton label="Delete" onClick={this.handleLoadClick} />
       </div>
     );
   }
