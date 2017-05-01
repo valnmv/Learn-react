@@ -9,7 +9,7 @@
             "type": "chrome",
             "request": "launch",
             "url": "http://localhost:3000",
-            "webRoot": "${workspaceRoot}/dist/js"
+            "webRoot": "${workspaceRoot}"
         },
         {
             "name": "Attach to Chrome",
@@ -17,7 +17,7 @@
             "request": "attach",
             "port": 9222,
             "url": "http://localhost:3000",
-            "webRoot": "${workspaceRoot}/dist/js"
+            "webRoot": "${workspaceRoot}"
         },
         {
             "name": "Launch Program",
