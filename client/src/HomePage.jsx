@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { TextField, FlatButton } from 'material-ui';
 import ItemTable from './ItemTable';
 

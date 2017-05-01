@@ -5,11 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch Chrome",
             "type": "chrome",
             "request": "launch",
-            "name": "Launch Chrome",
             "url": "http://localhost:3000",
-            "webRoot": "${workspaceRoot}"
+            "webRoot": "${workspaceRoot}/dist/js"
         },
         {
             "name": "Attach to Chrome",
@@ -17,19 +17,19 @@
             "request": "attach",
             "port": 9222,
             "url": "http://localhost:3000",
-            "webRoot": "${workspaceRoot}"
+            "webRoot": "${workspaceRoot}/dist/js"
         },
         {
+            "name": "Launch Program",
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
             "program": "${workspaceRoot}/index.js",
             "cwd": "${workspaceRoot}"
         },
         {
+            "name": "Attach to Process",
             "type": "node",
             "request": "attach",
-            "name": "Attach to Process",
             "port": 5858,
             "sourceMaps": true
         }
