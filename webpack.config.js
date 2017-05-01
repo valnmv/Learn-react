@@ -13,10 +13,10 @@ module.exports = {
   devtool: 'source-map',
 
   module: {
-    loaders: [{
+    rules: [{
       test: /\.jsx?$/,
       include: path.join(__dirname, '/client/src'),
-      loader: 'babel',
+      loader: 'babel-loader',
       query: {
         presets: ["react", "es2015", "stage-0"]
       }
@@ -24,8 +24,11 @@ module.exports = {
   },
 
   resolve: {
-    root: [path.join(__dirname, 'client/src')],
-    extensions: ['', '.js', '.jsx', '.css']
+    modules: [
+      path.join(__dirname, 'client/src'),
+      "node_modules"
+    ],
+    extensions: ['.js', '.jsx', '.css']
   },
 
   // start Webpack in a watch mode, so Webpack will rebuild the bundle on changes
