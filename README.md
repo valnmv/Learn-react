@@ -3,6 +3,8 @@ Learning project based on https://github.com/vladimirponomarev/authentication-in
 
 Install Python 2.7, run MongoDB server.
 
+For VSCode Chrome debugging run Chrome in debug mode as described in https://github.com/Microsoft/vscode-chrome-debug
+
 ## Major updates
 Added redux-act, react-devtools, eslint and flow
 
