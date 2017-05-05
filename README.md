@@ -5,9 +5,6 @@ Install Python 2.7, run MongoDB server.
 
 For VSCode Chrome debugging run Chrome in debug mode as described in https://github.com/Microsoft/vscode-chrome-debug
 
-# TODO
-- Use babel-preset-env https://github.com/babel/babel-preset-env
-
 ## Major updates
 Added redux-act, react-devtools, eslint and flow
 
