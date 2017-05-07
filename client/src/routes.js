@@ -10,6 +10,7 @@ export default() => {
     <Route path="/" component={MainForm}>
       <IndexRoute component={HomePage}/>
       <Route path="/about" component={About}/>
+      <Route path="/account" component={Account}/>
       <Route path="/item/:_id" component={ItemCard}/>
     </Route>
   );
