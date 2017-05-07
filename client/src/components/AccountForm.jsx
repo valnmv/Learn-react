@@ -1,17 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { Card, CardTitle } from 'material-ui/Card';
+import { TextField } from 'material-ui/TextField';
+import { RaisedButton } from 'material-ui/RaisedButton';
 
-class AccountForm extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const AccountForm = (onSubmit, onChange, user) => (
+  <Card>
+    <CardTitle title="Sign In" />
+    <form action="/" onSubmit={onSubmit}>
+      <TextField name="email" onChange={onChange} value={user.email}/>
+      <TextField name="password" type="password" onChange={onChange} value={user.password}/>
+      <RaisedButton type="submit" label="Sign In" primary/>
+    </form>
+  </Card>
+);
 
-  render() {
-    return (
-      <div>
-        account...
-      </div>
-    );
-  }
-}
+AccountForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired
+};
 
 export default AccountForm;
