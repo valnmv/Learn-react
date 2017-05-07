@@ -5,7 +5,7 @@ import ItemTable from './ItemTable';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as ItemActions from './reducers/items';
+import * as ItemActions from '../reducers/items';
 
 class HomePage extends Component {
   constructor(props) {
