@@ -48,14 +48,10 @@ LoginPage.propTypes = {
   actions: PropTypes.object.isRequired
 };
 
-function mapStateToProps(state) {
-  return { user: state.user };
-}
-
 function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(AuthActions, dispatch)
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
+export default connect(null, mapDispatchToProps)(LoginPage);
