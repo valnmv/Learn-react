@@ -4,12 +4,15 @@ Learning project based on https://github.com/vladimirponomarev/authentication-in
 Install Python 2.7, run MongoDB server.
 
 # Development environment
-VS Code, plugins
+VS Code, plugins:
 * eslint
 * Debugger for Chrome
 
 Run Chrome in debug mode as described in https://github.com/Microsoft/vscode-chrome-debug
-See Extensions | @recommended
+
+Install Redux DevTools Extension for Chrome.
+
+See VSCode, Extensions | @recommended.
 
 ## Major updates
 Added redux-act, react-devtools, eslint and flow

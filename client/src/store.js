@@ -5,6 +5,8 @@ import thunk from 'redux-thunk';
 
 export default function configureStore(initialState, history) {
   const middleware = [thunk, routerMiddleware(history)];
-  const store = createStore(rootReducer, initialState, compose(applyMiddleware(...middleware), f => f));
+  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  const store = createStore(rootReducer, initialState,
+    composeEnhancers(applyMiddleware(...middleware), f => f));
   return store;
 }
