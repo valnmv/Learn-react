@@ -16,6 +16,7 @@ const MainMenu = (props) => (
     >
     <MenuItem primaryText="Refresh" />
     <MenuItem primaryText="Help" containerElement={< Link to="/about" />} />
+    <MenuItem primaryText="Sign in" containerElement={< Link to="/login" />} />
     <MenuItem primaryText="Sign out" />
   </IconMenu>
 );
