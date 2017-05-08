@@ -18,7 +18,7 @@ class AwsAuth {
   constructor() {
   }
 
-  signIn = (email, password) => {
+  signIn = (email, password, callback) => {
     const authenticationData = {
       Username: email,
       Password: password
@@ -34,10 +34,10 @@ class AwsAuth {
     const cognitoUser = new CognitoUser(userData);
     cognitoUser.authenticateUser(authenticationDetails, {
       onSuccess: (result) => {
-        console.log('access token + ' + result.getAccessToken().getJwtToken());
+        callback(null, result.getAccessToken().getJwtToken());
       },
       onFailure: (err) => {
-        console.log(err);
+        callback(err, null);
       }
     });
   }
