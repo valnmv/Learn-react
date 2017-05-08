@@ -4,12 +4,29 @@ import { Card, CardTitle } from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
-const LoginForm = (onSubmit, onChange, user) => (
+const LoginForm = ({
+  onSubmit,
+  onChange,
+  user
+}) => (
   <Card>
     <CardTitle title="Sign In" />
     <form action="/" onSubmit={onSubmit}>
-      <TextField floatingLabelText="Email"  name="email" onChange={onChange} value={user.email}/>
-      <TextField floatingLabelText="Password" name="password" type="password" onChange={onChange} value={user.password}/>
+      <TextField
+        floatingLabelText="Email"
+        floatingLabelFixed
+        name="email"
+        onChange={onChange}
+        value={user.email}
+      /><br />
+      <TextField
+        floatingLabelText="Password"
+        floatingLabelFixed
+        name="password"
+        type="password"
+        onChange={onChange}
+        value={user.password}
+      /><br />
       <RaisedButton type="submit" label="Sign In" primary/>
     </form>
   </Card>
