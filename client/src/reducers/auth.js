@@ -9,7 +9,7 @@ export const signUp = createAction('sign up');
 
 export default createReducer({
   [signIn]: (state, user) => {
-    callApi('post', 0, user, '/api/auth');
+    callApi('post', 0, user, '/auth/signin');
     return state;
   },
 
