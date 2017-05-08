@@ -1,4 +1,5 @@
 import { createAction, createReducer } from 'redux-act';
+import { callApi } from '../callapi';
 
 const initialState = [];
 
@@ -7,7 +8,8 @@ export const signOut = createAction('sign out');
 export const signUp = createAction('sign up');
 
 export default createReducer({
-  [signIn]: (state, {}) => {
+  [signIn]: (state, user) => {
+    callApi('post', 0, user, '/api/auth');
     return state;
   },
 

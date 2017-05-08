@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LoginForm from '../components/LoginForm';
 
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as AuthActions from '../reducers/auth';
+
 class LoginPage extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -18,6 +22,7 @@ class LoginPage extends React.Component {
 
   processForm = (event)=> {
     event.preventDefault();
+    this.props.actions.signIn(this.state.user);
   }
 
   changeUser = (event) => {
@@ -39,4 +44,18 @@ LoginPage.contextTypes = {
   router: PropTypes.object.isRequired
 };
 
-export default LoginPage;
+LoginPage.propTypes = {
+  actions: PropTypes.object.isRequired
+};
+
+function mapStateToProps(state) {
+  return { user: state.user };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(AuthActions, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
