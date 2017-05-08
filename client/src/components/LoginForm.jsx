@@ -4,7 +4,7 @@ import { Card, CardTitle } from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
-const AccountForm = (onSubmit, onChange, user) => (
+const LoginForm = (onSubmit, onChange, user) => (
   <Card>
     <CardTitle title="Sign In" />
     <form action="/" onSubmit={onSubmit}>
@@ -15,10 +15,10 @@ const AccountForm = (onSubmit, onChange, user) => (
   </Card>
 );
 
-AccountForm.propTypes = {
+LoginForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired
 };
 
-export default AccountForm;
+export default LoginForm;

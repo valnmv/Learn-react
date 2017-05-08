@@ -4,14 +4,14 @@ import MainForm from './components/MainForm';
 import About from './components/About';
 import HomePage from './components/HomePage';
 import ItemCard from './components/ItemCard';
-import AccountPage from './containers/AccountPage';
+import LoginPage from './containers/LoginPage';
 
 export default() => {
   return (
     <Route path="/" component={MainForm}>
       <IndexRoute component={HomePage}/>
       <Route path="/about" component={About}/>
-      <Route path="/account" component={AccountPage}/>
+      <Route path="/login" component={LoginPage}/>
       <Route path="/item/:_id" component={ItemCard}/>
     </Route>
   );

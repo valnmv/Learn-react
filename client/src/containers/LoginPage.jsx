@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AccountForm from '../components/AccountForm';
+import LoginForm from '../components/LoginForm';
 
-class AccountPage extends React.Component {
+class LoginPage extends React.Component {
   constructor(props, context) {
     super(props, context);
 
@@ -30,13 +30,13 @@ class AccountPage extends React.Component {
 
   render() {
     return (
-      <AccountForm onSubmit={this.processForm} onChange={this.changeUser} user={this.state.user}/>
+      <LoginForm onSubmit={this.processForm} onChange={this.changeUser} user={this.state.user}/>
     );
   }
 }
 
-AccountPage.contextTypes = {
+LoginPage.contextTypes = {
   router: PropTypes.object.isRequired
 };
 
-export default AccountPage;
+export default LoginPage;
