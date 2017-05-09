@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/valnmv/learn-react",
   "scripts": {
-    "start": "nodemon --use-strict index.js --exec babel-node --presets es2015,stage-2",
+    "start": "nodemon --use-strict index.js",
     "bundle": "webpack"
   },
   "dependencies": {
@@ -58,6 +58,7 @@
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.4.0",
     "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.24.1",
     "es6-promise": "^4.1.0",
     "eslint": "^3.19.0",
     "eslint-plugin-react": "^6.10.3",

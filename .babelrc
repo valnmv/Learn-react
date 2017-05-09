@@ -9,6 +9,7 @@
       "debug": "true"
     }]
   ],
-
+  "sourceMaps": true,
+  "retainLines": true,
   "plugins": ["transform-class-properties"]
 }
