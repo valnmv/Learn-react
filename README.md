@@ -43,8 +43,10 @@ Boilerplates:
 * https://github.com/FredericHeem/starhackit
 
 React props vs state:
+
 https://github.com/uberVU/react-guide/blob/master/props-vs-state.md
 http://stackoverflow.com/questions/27991366/what-is-the-difference-between-state-and-props-in-react
+http://lucybain.com/blog/2016/react-state-vs-pros/
 - props are passed from parent to child components
 - keep in state only data used in render(), React renders after every state change
 
