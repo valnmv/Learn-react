@@ -43,10 +43,12 @@ Boilerplates:
 * https://github.com/FredericHeem/starhackit
 
 React props vs state:
+https://github.com/uberVU/react-guide/blob/master/props-vs-state.md
+http://stackoverflow.com/questions/27991366/what-is-the-difference-between-state-and-props-in-react
 - props are passed from parent to child components
 - keep in state only data used in render(), React renders after every state change
 
-http://stackoverflow.com/questions/25241500/how-to-import-excel-file-xlsx-to-mongodb
+Excel to MongoDB, http://stackoverflow.com/questions/25241500/how-to-import-excel-file-xlsx-to-mongodb
 
 HTML sanitize, https://www.npmjs.com/package/sanitize-html  
 Client-generated id, https://github.com/ericelliott/cuid  
